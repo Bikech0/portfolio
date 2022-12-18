@@ -395,6 +395,12 @@ form .btn2{
     color: #fff;
 }
 
+.copy{
+    text-decoration: none;
+    color: #ff004f;
+}
+
+
 /* Responsive-Desgin */
 
 nav .fas{
