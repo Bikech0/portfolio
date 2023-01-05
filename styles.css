@@ -396,6 +396,11 @@ form .btn2{
     color: green
 }
 
+.proj{
+    text-decoration: none;
+    color: #ababab;
+}
+
 .book{
     text-decoration: none;
     color: grey
