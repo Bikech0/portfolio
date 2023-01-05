@@ -157,6 +157,7 @@ nav ul li a:hover::after{
 
 .tab-contents ul li span{
     color: #b54769;
+    font-size: 27px;
 }
 
 
@@ -392,7 +393,12 @@ form .btn2{
 
 .cred{
     text-decoration: none;
-    color: #fff;
+    color: green
+}
+
+.book{
+    text-decoration: none;
+    color: grey
 }
 
 .copy{
