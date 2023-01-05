@@ -411,6 +411,18 @@ form .btn2{
     color: #ff004f;
 }
 
+.ps{
+    color: rgb(0, 136, 255);
+    font-size: 23px;
+}
+
+.ds{
+    text-decoration: none;
+    color: green;
+    font-size: 21px;
+    margin-left: 27px;
+}
+
 
 /* Responsive-Desgin */
 
