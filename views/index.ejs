@@ -5,10 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.cdnfonts.com/css/anachak-trial" rel="stylesheet">
     <title>My Personal Portfolio</title>
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/anachak-trial');
+    </style>
     <script src="https://kit.fontawesome.com/77eaad2351.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
     <div id="header">
         <div class="container">
             <nav>
@@ -24,8 +29,9 @@
                 <i class="fas fa-bars" onclick="open_menu()"></i>
             </nav>
             <div class="header-text">
-                <p>Data Scientist & Software Developer</p>
                 <h1>Hi, I'm <span>Mohamed</span></h1>
+                <span class="text first-text">I'm a</span>
+                <span class="text sec-text">Data Scientist</span>
             </div>
         </div>
     </div>
@@ -264,6 +270,25 @@
             <p> Created By <a class="copy" href="#">Mohamed Toumi</a> | <i class="fa-regular fa-copyright"></i> 2023 All rights reserved.</p>
         </div>
     </div>
+
+    <script>
+        const text = document.querySelector(".sec-text");
+
+        const textLoad = () => {
+            setTimeout(() => {
+                text.textContent = "Data Scientist";
+            }, 0);
+            setTimeout(() => {
+                text.textContent = "Software Developer";
+            }, 4000);
+            setTimeout(() => {
+                text.textContent = "Student";
+            }, 8000); //1s = 1000 milliseconds
+        }
+
+        textLoad();
+        setInterval(textLoad, 12000);
+    </script>
 
     <script>
         var tablinks = document.getElementsByClassName("tab-links");
