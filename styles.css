@@ -444,18 +444,63 @@ nav .fas{
 /* Small Screen */
 
 
+
+
+
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+.container .text{
+    position: relative;
+    color: #00FF00;
+    font-size: 30px;
+    font-weight: 600;
+}
+.container .text.first-text{
+    color: #FFF;
+}
+.text.sec-text:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #241f19;
+    border-left: 2px solid #00FF00;
+    animation: animate 4s steps(12) infinite;
+}
+@keyframes animate{
+    40%, 60%{
+        left: calc(100% + 4px);
+    }
+    100%{
+        left: 0%;
+    }
+}
+
+
+
 @media only screen and (max-width: 600px){
     #header{
-        background-image: url("images/black.jpg");
+        background-image: url("images/me8.png");
     }
 
     .header-text{
-        margin-top: 100%;
-        font-size: 16px;
+        width: 200%;
+        margin-top: 160%;
+        margin-left: 5%;
+    }
+
+    .container .text{
+        position: relative;
+        color: #00FF00;
+        font-size: 20px;
+        font-weight: 600;
     }
 
     .header-text h1{
-        font-size: 30px;
+        font-size: 20px;
     }
 
     nav .fas{
@@ -517,37 +562,4 @@ nav .fas{
     color: #61b752;
     margin-top: -40px;
     display: block;
-}
-
-
-/* ===== Google Font Import - Poppins ===== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
-
-.container .text{
-    position: relative;
-    color: #00FF00;
-    font-size: 30px;
-    font-weight: 600;
-}
-.container .text.first-text{
-    color: #FFF;
-}
-.text.sec-text:before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #241f19;
-    border-left: 2px solid #00FF00;
-    animation: animate 4s steps(12) infinite;
-}
-@keyframes animate{
-    40%, 60%{
-        left: calc(100% + 4px);
-    }
-    100%{
-        left: 0%;
-    }
 }
