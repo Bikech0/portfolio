@@ -333,6 +333,10 @@ nav ul li a:hover::after{
 
 /* Contact */
 
+.mail{
+    text-decoration: none;
+    color: #FFFFFF;
+}
 
 .contact-left{
     flex-basis: 35%;
