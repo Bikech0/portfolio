@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Anachak Trial', sans-serif;
     box-sizing: border-box;
 }
                                                 
@@ -431,7 +431,7 @@ form .btn2{
 
 .ds{
     text-decoration: none;
-    color: green;
+    color: #D1D100;
     font-size: 21px;
     margin-left: 27px;
 }
