@@ -8,15 +8,14 @@ mongoose.set('strictQuery', true);
 
 mongoose.connect("mongodb+srv://" + process.env.DB_USER + ":" + process.env.DB_PWD + "@cluster0.emfgcff.mongodb.net/?retryWrites=true&w=majority");
 
+const schemas = require("./exports/Schemas.js");
 
-const formSchema = {
-    "Name": String,
-    "Email": String,
-    "Message": String
-}
-
-
-const Form = mongoose.model("Form", formSchema);
+const Form = mongoose.model("Form", schemas.formSchema);
+const Skills = mongoose.model("Skills", schemas.skills);
+const VolunWork = mongoose.model("VolunWork", schemas.volunWork);
+const Certs = mongoose.model("Certs", schemas.certs);
+const Work = mongoose.model("Work", schemas.work);
+const Services = mongoose.model("Services", schemas.services);
 
 
 const app = express();
@@ -29,7 +28,18 @@ app.use(express.json());
 
 
 app.get("/", (req, res)=>{
-    res.render("index")
+    Skills.find().then(d => {
+        VolunWork.find().then(vw => {
+            Certs.find().then(oc => {
+                Work.find().then(wrks => {
+                    Services.find().then(services => {
+                        res.render("index", {skills: d, volunWork: vw, certs: oc, work: wrks, services: services});
+                    })
+                })
+            })
+        })
+    });
+    
 })
 
 
