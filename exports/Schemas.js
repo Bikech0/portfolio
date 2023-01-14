@@ -33,6 +33,7 @@ const work = {
 }
 
 const services = {
+    "icon": String,
     "name": String,
     "desc": String
 }

@@ -1,8 +1,12 @@
+@import url('https://fonts.cdnfonts.com/css/curbstone');
+@import url('https://fonts.cdnfonts.com/css/anachak-trial');
+
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Anachak Trial', sans-serif;
+    font-family: 'Curbstone', sans-serif;
     box-sizing: border-box;
+    line-height: 120%;
 }
                                                 
 
@@ -49,7 +53,7 @@ nav ul li {
 nav ul li a{
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 22px;
     position: relative;
 }
 
@@ -131,7 +135,7 @@ nav ul li a:hover::after{
 
 .tab-links{
     margin-right: 50px;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 500;
     cursor: pointer;
     position: relative;
@@ -156,11 +160,11 @@ nav ul li a:hover::after{
 .who-am-i{
     margin-top: 30px;
     margin-bottom: 30px;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .tab-contents ul li{
-    font-size: 20px;
+    font-size: 22px;
     list-style: none;
     margin: 20px 0;
 
@@ -168,7 +172,7 @@ nav ul li a:hover::after{
 
 .tab-contents ul li span{
     color: #ff4769;
-    font-size: 27px;
+    font-size: 29px;
 }
 
 
@@ -202,7 +206,7 @@ nav ul li a:hover::after{
 .services-list div{
     background: #262626;
     padding: 40px;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 300;
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;

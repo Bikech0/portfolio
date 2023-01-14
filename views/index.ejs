@@ -5,11 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.cdnfonts.com/css/anachak-trial" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/curbstone" rel="stylesheet">
     <title>My Personal Portfolio</title>
-    <style>
-        @import url('https://fonts.cdnfonts.com/css/anachak-trial');
-    </style>
     <script src="https://kit.fontawesome.com/77eaad2351.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -155,7 +152,7 @@
             <div class="services-list">
                 <% for (let i=0; i<services.length; i++){%>
                     <div>
-                        <i class="fa-solid fa-code"></i>
+                        <i class="<%= services[i].icon %>""></i>
                         <h2><%= services[i].name %></h2>
                         <p><%= services[i].desc %></p>
                         <a href="#services">learn more</a>
