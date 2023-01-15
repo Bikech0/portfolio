@@ -1,5 +1,3 @@
-//Developer: Imdadullah Babu
-
 const s = window.screen;
 const w = (hacker.width = s.width);
 const h = (hacker.height = s.height);
