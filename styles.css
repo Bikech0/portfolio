@@ -486,6 +486,7 @@ nav .fas{
 @keyframes animate{
     40%, 60%{
         left: calc(100% + 4px);
+        width: 0;
     }
     100%{
         left: 0%;

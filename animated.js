@@ -1,18 +1,65 @@
-const s = window.screen;
-const w = (hacker.width = s.width);
-const h = (hacker.height = s.height);
-const ctx = hacker.getContext("2d");
-const p = Array(Math.floor(w / 10) + 1).fill(0);
-const random = (items) => items[Math.floor(Math.random() * items.length)];
-const hex = "0123456789ABCDEFG".split("");
 
-setInterval(() => {
-    ctx.fillStyle = "rgba(0, 0, 0, .05)";
-    ctx.fillRect(0, 0, w, h);
-    ctx.fillStyle = "green";
-    p.map((v, i) => {
-        ctx.fillText(random(hex), i * 10, v);
-        p[i] = v >= h || v > 50 + 10000 * Math.random() ? 0 : v + 10;
-    });
+const text = document.querySelector(".sec-text");
 
-}, 1000 / 30);
+const textLoad = () => {
+    setTimeout(() => {
+        text.textContent = "Data Scientist";
+    }, 0);
+    setTimeout(() => {
+        text.textContent = "Software Developer";
+    }, 4000);
+    setTimeout(() => {
+        text.textContent = "Student";
+    }, 8000);
+}
+
+textLoad();
+setInterval(textLoad, 12000);
+
+
+var tablinks = document.getElementsByClassName("tab-links");
+var tabcontents = document.getElementsByClassName("tab-contents");
+function opentab(tabname){
+    for (tablink of tablinks){
+        tablink.classList.remove("active-link");
+    }
+    for (tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab")
+}
+
+
+var side_menu = document.getElementById("side-menu");
+
+function open_menu(){
+    side_menu.style.right = "0";
+}
+
+function close_menu(){
+    side_menu.style.right = "-200px";
+}
+
+
+
+const form = document.forms['contact-form'];
+const msg = document.getElementById("msg");
+
+form.addEventListener('submit', e => {
+e.preventDefault()
+req = {
+    "Name": document.getElementById("name").value,
+    "Email": document.getElementById("email").value,
+    "Message": document.getElementById("message").value
+}
+fetch("/contact", { method: 'POST', headers: {"Content-Type": "application/json"}, body: JSON.stringify(req)})
+    .then(response => {
+        msg.innerHTML = "Message send successfully";
+        setTimeout(()=>{
+            msg.innerHTML = "";
+        }, 5000);
+        form.reset();
+    })
+    .catch(error => console.error('Error!', error.message))
+})
