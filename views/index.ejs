@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.cdnfonts.com/css/curbstone" rel="stylesheet">
     <title>My Personal Portfolio</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="load-more-button.js"></script>
     <script src="https://kit.fontawesome.com/77eaad2351.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
 
@@ -170,18 +173,30 @@
             <h1 class="sub-title">My Work</h1>
             <div class="work-list">
                 <% for (let i=0; i<work.length; i++){%>
-                    <div class="work">
-                        <img src=<%= work[i].img_src %> alt="">
-                        <div class="layer">
-                            <h3><%= work[i].title %></h3>
-                            <p><%= work[i].desc %></p>
-                            <a href=<%= work[i].link %>><i class="fa-solid fa-up-right-from-square"></i></i></a>
+                    <%if (i<3){%>
+                        <div class="work">
+                            <img src=<%= work[i].img_src %> alt="">
+                            <div class="layer">
+                                <h3><%= work[i].title %></h3>
+                                <p><%= work[i].desc %></p>
+                                <a href=<%= work[i].link %>><i class="fa-solid fa-up-right-from-square"></i></i></a>
+                            </div>
                         </div>
-                    </div>
+                    
+                    <%}else{%>
+                        <div class="work moreBox" style="display: none;">
+                            <img src=<%= work[i].img_src %> alt="">
+                            <div class="layer">
+                                <h3><%= work[i].title %></h3>
+                                <p><%= work[i].desc %></p>
+                                <a href=<%= work[i].link %>><i class="fa-solid fa-up-right-from-square"></i></i></a>
+                            </div>
+                        </div>
+                    <%}%>
                 <%}%>
             </div>
                 
-            <a href="#portfolio" class="btn">See more</a>
+            <a href="#portfolio" class="btn" id="loadMore">See more</a>
         </div>
     </div>
 
@@ -218,6 +233,8 @@
             <p> Created By <a class="copy" href="#">Mohamed Toumi</a> | <i class="fa-regular fa-copyright"></i> 2023 All rights reserved.</p>
         </div>
     </div>
+
+    <!-- JS -->
 
     <script>
         const text = document.querySelector(".sec-text");
