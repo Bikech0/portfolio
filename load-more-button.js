@@ -12,7 +12,7 @@ $( document ).ready(function () {
       else if (nb_hidden_boxes > 3) {
         $(".moreBox:hidden").slice(0, 3).slideDown();
       }else{
-        $(".moreBox:hidden").slice(0, 3).slideDown();
+        $(".moreBox:hidden").slice(0, nb_hidden_boxes).slideDown();
         document.querySelector("#loadMore").innerHTML = "Show less";
       }
     });
