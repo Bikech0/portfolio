@@ -133,24 +133,35 @@
                             <li>
                                 <span>Technical Books</span>
                                 <br><br>
-                                <%for (let i=0; i<books.length; i++){%>
-                                    <%if (books[i].type == "tech"){%>
-                                        <a class="book" href=<%= books[i].link %>> <%= books[i].title %> <i class="fa-solid fa-book"></i></a>    
-                                        <br><br>
+                                <%for (let i=0; i<tkbooks.length; i++){%>
+                                    <%if(i<3){%>
+                                        <div class="book-loader">
+                                            <a class="book" href=<%= tkbooks[i].link %>> <%= tkbooks[i].title %> <i class="fa-solid fa-book"></i></a>    
+                                        </div>
+                                    <%}else{%>
+                                        <div class="book-loader tk" style="display: none;">
+                                            <a class="book" href=<%= tkbooks[i].link %>> <%= tkbooks[i].title %> <i class="fa-solid fa-book"></i></a>    
+                                        </div>
                                     <%}%>
                                 <%}%>
-
+                                <a href="#about" class="btn" id="loadMoreTechBooks">See more</a>       
                             </li>
                             <li>
                                 <span>Non-Technical Books</span>
                                 <br><br>
-                                <%for (let i=0; i<books.length; i++){%>
-                                    <%if(books[i].type == "non_tech"){%>
-                                        <a class="book" href=<%= books[i].link %>> <%= books[i].title %> <i class="fa-solid fa-book"></i></a>    
-                                        <br><br>
+                                <%for (let i=0; i<ntkbooks.length; i++){%>
+                                    <%if(i<3){%>
+                                        <div class="book-loader">
+                                            <a class="book" href=<%= ntkbooks[i].link %>> <%= ntkbooks[i].title %> <i class="fa-solid fa-book"></i></a>    
+                                        </div>
+                                    <%}else{%>
+                                        <div class="book-loader ntk" style="display: none;">
+                                            <a class="book" href=<%= ntkbooks[i].link %>> <%= ntkbooks[i].title %> <i class="fa-solid fa-book"></i></a>    
+                                        </div>
+                                        
                                     <%}%>
                                 <%}%>
-
+                                <a href="#about" class="btn" id="loadMoreNonTechBooks">See more</a>               
                             </li>
                         </ul>
                         

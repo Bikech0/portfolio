@@ -1,51 +1,30 @@
+function load_more(element_class, btn_id){
+  $("#"+btn_id).on('click', function (e) {
+    e.preventDefault();
+    let nb_hidden_boxes = $("."+ element_class + ":hidden").length;
+    console.log(nb_hidden_boxes);
+    if (!(nb_hidden_boxes)){
+      $("."+ element_class).slideUp();
+      document.querySelector("#"+btn_id).innerHTML = "See more";
+    }
+    else if (nb_hidden_boxes > 3) {
+      $("."+ element_class + ":hidden").slice(0, 3).slideDown();
+    }else{
+      $("."+ element_class + ":hidden").slice(0, nb_hidden_boxes).slideDown();
+      document.querySelector("#"+btn_id).innerHTML = "Show less";
+    }
+  });
+}
+
+
 $( document ).ready(function () {
-    if ($(".work:hidden").length != 0) {
-      $("#loadMore").show();
-    }   
-    $("#loadMore").on('click', function (e) {
-      e.preventDefault();
-      let nb_hidden_boxes = $(".moreBox:hidden").length;
-      if (!(nb_hidden_boxes)){
-        $(".moreBox").slideUp();
-        document.querySelector("#loadMore").innerHTML = "See more";
-      }
-      else if (nb_hidden_boxes > 3) {
-        $(".moreBox:hidden").slice(0, 3).slideDown();
-      }else{
-        $(".moreBox:hidden").slice(0, nb_hidden_boxes).slideDown();
-        document.querySelector("#loadMore").innerHTML = "Show less";
-      }
-    });
+    load_more("moreBox", "loadMore");
+    
+    load_more("cert", "loadMoreCerts");
 
-    $("#loadMoreCerts").on("click", (e)=>{
-      e.preventDefault();
-      let nb_hidden_boxes = $(".cert:hidden").length;
-      if (!(nb_hidden_boxes)){
-        $(".cert").slideUp();
-        document.querySelector("#loadMoreCerts").innerHTML = "See more";
-      }
-      else if (nb_hidden_boxes > 3) {
-        $(".cert:hidden").slice(0, 3).slideDown();
-      }else{
-        $(".cert:hidden").slice(0, nb_hidden_boxes).slideDown();
-        document.querySelector("#loadMoreCerts").innerHTML = "Show less";
-      }
-    })
+    load_more("tk", "loadMoreTechBooks");
 
-    $("#loadMoreBooks").on("click", (e)=>{
-      e.preventDefault();
-      let nb_hidden_boxes = $(".cert:hidden").length;
-      if (!(nb_hidden_boxes)){
-        $(".cert").slideUp();
-        document.querySelector("#loadMoreCerts").innerHTML = "See more";
-      }
-      else if (nb_hidden_boxes > 3) {
-        $(".cert:hidden").slice(0, 3).slideDown();
-      }else{
-        $(".cert:hidden").slice(0, nb_hidden_boxes).slideDown();
-        document.querySelector("#loadMoreCerts").innerHTML = "Show less";
-      }
-    })
+    load_more("ntk", "loadMoreNonTechBooks");
 
   });
   

@@ -19,6 +19,15 @@ const Services = mongoose.model("Services", schemas.services);
 const Books = mongoose.model("Books", schemas.books);
 
 
+function zdo(books, text){
+    let book = [];
+    for (let i=0; i<books.length; i++){
+        if (books[i].type == text) book.push(books[i]);
+    }
+    return book;
+}
+
+
 const app = express();
 const port = 3000 || process.env.PORT
 app.use(express.static(__dirname));
@@ -35,7 +44,9 @@ app.get("/", (req, res)=>{
                 Work.find().then(wrks => {
                     Services.find().then(services => {
                         Books.find().then(books => {
-                            res.render("index", {skills: d, volunWork: vw, certs: oc, work: wrks, services: services, books: books});
+                            let tkbooks = zdo(books, "tech");
+                            let ntkbooks = zdo(books, "non_tech");
+                            res.render("index", {skills: d, volunWork: vw, certs: oc, work: wrks, services: services, tkbooks: tkbooks, ntkbooks: ntkbooks});
                         })
                     })
                 })

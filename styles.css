@@ -190,10 +190,9 @@ nav ul li a:hover::after{
     display: block;
 }
 
-#loadMoreCerts{
+#loadMoreCerts, #loadMoreTechBooks, #loadMoreNonTechBooks{
     margin-left: 0;
 }
-
 
 /* services */
 
@@ -430,7 +429,11 @@ form .btn2{
 
 .book{
     text-decoration: none;
-    color: grey
+    color: grey;
+}
+
+.book-loader{
+    margin-bottom: 2%;
 }
 
 .copy{
