@@ -110,11 +110,21 @@
                             <span>Online Certifications</span>
                                 <% for (let i=0; i<certs.length; i++){%>
                                     <li>
-                                        <p class="description"><%= certs[i].cert_name %></p>
-                                        <a class="cred" href=<%= certs[i].cert_url %>>Show credentials <i class="fa-solid fa-paperclip"></i></a>
+                                        <%if(i<3){%>
+                                            <div>
+                                                <p class="description"><%= certs[i].cert_name %></p>
+                                                <a class="cred" href=<%= certs[i].cert_url %>>Show credentials <i class="fa-solid fa-paperclip"></i></a>
+                                            </div>
+                                        <%}else{%>
+                                            <div class="cert" style="display: none;">
+                                                <p class="description"><%= certs[i].cert_name %></p>
+                                                <a class="cred" href=<%= certs[i].cert_url %>>Show credentials <i class="fa-solid fa-paperclip"></i></a>
+                                            </div>
+                                        <%}%>
                                     </li>
                                 <%}%>
                             </li>
+                            <a href="#about" class="btn" id="loadMoreCerts">See more</a>
                         </ul>
                     </div>
 
@@ -123,20 +133,24 @@
                             <li>
                                 <span>Technical Books</span>
                                 <br><br>
-                                <a class="book" href="https://cses.fi/book/book.pdf">Competitive Programmer’s Handbook <i class="fa-solid fa-book"></i></a>
-                                <br><br>
+                                <%for (let i=0; i<books.length; i++){%>
+                                    <%if (books[i].type == "tech"){%>
+                                        <a class="book" href=<%= books[i].link %>> <%= books[i].title %> <i class="fa-solid fa-book"></i></a>    
+                                        <br><br>
+                                    <%}%>
+                                <%}%>
 
-                                <a class="book" href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf">Understanding Machine Learning From Theory to Algorithms <i class="fa-solid fa-book"></i></a>
-                                <br><br>                             
                             </li>
                             <li>
                                 <span>Non-Technical Books</span>
                                 <br><br>
-                                <a class="book" href="https://www.amazon.com/Sapiens-Humankind-Yuval-Noah-Harari/dp/0062316095">Homo Sapiens a brief history of humankind <i class="fa-solid fa-book"></i></a>
-                                <br><br>
+                                <%for (let i=0; i<books.length; i++){%>
+                                    <%if(books[i].type == "non_tech"){%>
+                                        <a class="book" href=<%= books[i].link %>> <%= books[i].title %> <i class="fa-solid fa-book"></i></a>    
+                                        <br><br>
+                                    <%}%>
+                                <%}%>
 
-                                <a class="book" href="https://jamesclear.com/atomic-habits">Atomic Habits <i class="fa-solid fa-book"></i></a>
-                                <br><br>
                             </li>
                         </ul>
                         

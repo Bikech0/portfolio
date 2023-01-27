@@ -38,6 +38,13 @@ const services = {
     "desc": String
 }
 
+const books = {
+    "title": String,
+    "link": String,
+    "type": String
+}
+
+
 
 
 
@@ -47,5 +54,6 @@ module.exports = {
     volunWork,
     certs,
     work,
-    services
+    services,
+    books
 }

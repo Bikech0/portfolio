@@ -16,6 +16,7 @@ const VolunWork = mongoose.model("VolunWork", schemas.volunWork);
 const Certs = mongoose.model("Certs", schemas.certs);
 const Work = mongoose.model("Work", schemas.work);
 const Services = mongoose.model("Services", schemas.services);
+const Books = mongoose.model("Books", schemas.books);
 
 
 const app = express();
@@ -33,7 +34,9 @@ app.get("/", (req, res)=>{
             Certs.find().then(oc => {
                 Work.find().then(wrks => {
                     Services.find().then(services => {
-                        res.render("index", {skills: d, volunWork: vw, certs: oc, work: wrks, services: services});
+                        Books.find().then(books => {
+                            res.render("index", {skills: d, volunWork: vw, certs: oc, work: wrks, services: services, books: books});
+                        })
                     })
                 })
             })
