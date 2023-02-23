@@ -44,11 +44,16 @@ const books = {
     "type": String
 }
 
+const whoami = {
+    "intro": String
+}
+
 
 
 
 
 module.exports = {
+    whoami,
     formSchema,
     skills,
     volunWork,
