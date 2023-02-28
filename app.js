@@ -18,6 +18,7 @@ const Work = mongoose.model("Work", schemas.work);
 const Services = mongoose.model("Services", schemas.services);
 const Books = mongoose.model("Books", schemas.books);
 const WhoAmI = mongoose.model("WhoAmI", schemas.whoami);
+const Contact = mongoose.model("Contact", schemas.contact);
 
 
 function zdo(books, text){
@@ -45,10 +46,13 @@ app.get("/", (req, res)=>{
                 Certs.find().then(oc => {
                     Work.find().then(wrks => {
                         Services.find().then(services => {
-                            Books.find().then(books => {
-                                let tkbooks = zdo(books, "tech");
-                                let ntkbooks = zdo(books, "non_tech");
-                                res.render("index", {whoami: whoami, skills: d, volunWork: vw, certs: oc, work: wrks, services: services, tkbooks: tkbooks, ntkbooks: ntkbooks});
+                            Contact.find().then(cntct =>{
+                                Books.find().then(books => {
+                                    console.log(cntct);
+                                    let tkbooks = zdo(books, "tech");
+                                    let ntkbooks = zdo(books, "non_tech");
+                                    res.render("index", {contact: cntct[0], whoami: whoami, skills: d, volunWork: vw, certs: oc, work: wrks, services: services, tkbooks: tkbooks, ntkbooks: ntkbooks});
+                                })
                             })
                         })
                     })

@@ -48,6 +48,14 @@ const whoami = {
     "intro": String
 }
 
+const contact = {
+    "mail": String,
+    "phone": String,
+    "fb": String,
+    "li": String,
+    "gh": String,
+}
+
 
 
 
@@ -60,5 +68,6 @@ module.exports = {
     certs,
     work,
     services,
-    books
+    books,
+    contact
 }
