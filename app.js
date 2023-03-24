@@ -39,28 +39,29 @@ app.use(express.json());
 
 
 
-app.get("/", (req, res)=>{
-    Skills.find().then(d => {
-        WhoAmI.find().then(whoami => {
-            VolunWork.find().then(vw => {
-                Certs.find().then(oc => {
-                    Work.find().then(wrks => {
-                        Services.find().then(services => {
-                            Contact.find().then(cntct =>{
-                                Books.find().then(books => {
-                                    console.log(cntct);
-                                    let tkbooks = zdo(books, "tech");
-                                    let ntkbooks = zdo(books, "non_tech");
-                                    res.render("index", {contact: cntct[0], whoami: whoami, skills: d, volunWork: vw, certs: oc, work: wrks, services: services, tkbooks: tkbooks, ntkbooks: ntkbooks});
-                                })
-                            })
-                        })
-                    })
-                })
-            })
-        })
-    });
-    
+app.get("/", async (req, res)=>{
+    const skills = await Skills.find({});
+    const whoami = await WhoAmI.find({});
+    const volunWork = await VolunWork.find({});
+    const certs = await Certs.find({});
+    const work = await Work.find({})  ;
+    const services = await Services.find({});
+    const contact = await Contact.find({});
+    const books = await Books.find({});
+    let tkbooks = zdo(books, "tech");
+    let ntkbooks = zdo(books, "non_tech");
+    const response = {
+        contact: contact[0],
+        whoami: whoami,
+        skills: skills,
+        volunWork: volunWork,
+        certs: certs,
+        work: work,
+        services: services,
+        tkbooks: tkbooks,
+        ntkbooks: ntkbooks
+    }
+    res.render("index", response);
 })
 
 
