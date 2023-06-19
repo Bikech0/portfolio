@@ -3,14 +3,17 @@ const text = document.querySelector(".sec-text");
 
 const textLoad = () => {
     setTimeout(() => {
-        text.textContent = "Data Scientist";
+        text.textContent = "Computer Scientist";
     }, 0);
     setTimeout(() => {
         text.textContent = "Software Developer";
     }, 4000);
     setTimeout(() => {
-        text.textContent = "Student";
+        text.textContent = "Engineering Student";
     }, 8000);
+    setTimeout(() => {
+        text.textContent = "AI Enthusiast"
+    }, 12000);
 }
 
 textLoad();
