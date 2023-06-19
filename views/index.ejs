@@ -32,7 +32,7 @@
             <div class="header-text">
                 <h1>Hi, I'm <span>Mohamed</span></h1>
                 <span class="text first-text">I'm a </span>
-                <span class="text sec-text">Data Scientist</span>
+                <span class="text sec-text">Computer Scientist</span>
             </div>
         </div>
     </div>
@@ -262,75 +262,7 @@
 
     <!-- JS -->
 
-    <script>
-        const text = document.querySelector(".sec-text");
-
-        const textLoad = () => {
-            setTimeout(() => {
-                text.textContent = "Data Scientist";
-            }, 0);
-            setTimeout(() => {
-                text.textContent = "Software Developer";
-            }, 4000);
-            setTimeout(() => {
-                text.textContent = "Student";
-            }, 8000); //1s = 1000 milliseconds
-        }
-
-        textLoad();
-        setInterval(textLoad, 12000);
-    </script>
-
-    <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-        function opentab(tabname){
-            for (tablink of tablinks){
-                tablink.classList.remove("active-link");
-            }
-            for (tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab")
-        }
-    </script>
-
-    <script>
-        var side_menu = document.getElementById("side-menu");
-
-        function open_menu(){
-            side_menu.style.right = "0";
-        }
-
-        function close_menu(){
-            side_menu.style.right = "-200px";
-        }
-
-    </script>
-
-    <script>
-        const form = document.forms['contact-form'];
-        const msg = document.getElementById("msg");
-    
-        form.addEventListener('submit', e => {
-        e.preventDefault()
-        req = {
-            "Name": document.getElementById("name").value,
-            "Email": document.getElementById("email").value,
-            "Message": document.getElementById("message").value
-        }
-        fetch("/contact", { method: 'POST', headers: {"Content-Type": "application/json"}, body: JSON.stringify(req)})
-            .then(response => {
-                msg.innerHTML = "Message send successfully";
-                setTimeout(()=>{
-                    msg.innerHTML = "";
-                }, 5000);
-                form.reset();
-            })
-            .catch(error => console.error('Error!', error.message))
-        })
-    </script>
+    <script src="animated.js"></script>
 
 </body>
 </html>
