@@ -488,7 +488,7 @@ nav .fas{
     width: 100%;
     background-color: #241f19;
     border-left: 2px solid #00FF00;
-    animation: animate 4s steps(12) infinite;
+    animation: animate 4s steps(16) infinite;
 }
 @keyframes animate{
     40%, 60%{
