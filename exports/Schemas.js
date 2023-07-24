@@ -22,7 +22,8 @@ const volunWork = {
 
 const certs = {
     "cert_name": String,
-    "cert_url": String
+    "cert_url": String,
+    "rank": Number
 }
 
 const work = {
