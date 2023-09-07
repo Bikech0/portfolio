@@ -177,6 +177,13 @@ nav ul li a:hover::after{
     font-size: 29px;
 }
 
+.acad_span{
+    color: #ff4769;
+    font-size: 29px;
+    font-family: 'Curbstone', sans-serif;
+    font-weight: normal;
+}
+
 
 .description{
     margin-top: 8px;
@@ -451,6 +458,11 @@ form .btn2{
     color: #D1D100;
     font-size: 21px;
     margin-left: 27px;
+}
+
+.academia{
+    color: yellow;
+    font-size: 25px;
 }
 
 

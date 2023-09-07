@@ -19,6 +19,11 @@ const Services = mongoose.model("Services", schemas.services);
 const Books = mongoose.model("Books", schemas.books);
 const WhoAmI = mongoose.model("WhoAmI", schemas.whoami);
 const Contact = mongoose.model("Contact", schemas.contact);
+const Education = mongoose.model("Education", schemas.education)
+const CP_Comp = mongoose.model("CP_Comp", schemas.cp_comp)
+const DS_Comp = mongoose.model("DS_Comp", schemas.ds_comp)
+const CTF_Comp = mongoose.model("CTF_Comp", schemas.ctf_comp)
+const PS_Profiles = mongoose.model("PS_Profiles", schemas.ps_profiles)
 
 
 function zdo(books, text){
@@ -49,8 +54,15 @@ app.get("/", async (req, res)=>{
     const services = await Services.find({});
     const contact = await Contact.find({});
     const books = await Books.find({});
+    const education = await Education.find({});
+    const cp_comp = await CP_Comp.find({});
+    const ds_comp = await DS_Comp.find({});
+    const ctf_comp = await CTF_Comp.find({});
+    const ps_profiles = await PS_Profiles.find({});
+
     let tkbooks = zdo(books, "tech");
     let ntkbooks = zdo(books, "non_tech");
+    
     const response = {
         contact: contact[0],
         whoami: whoami,
@@ -60,7 +72,12 @@ app.get("/", async (req, res)=>{
         work: work,
         services: services,
         tkbooks: tkbooks,
-        ntkbooks: ntkbooks
+        ntkbooks: ntkbooks,
+        education: education,
+        cp_comp: cp_comp,
+        ds_comp: ds_comp,
+        ctf_comp: ctf_comp,
+        ps_profiles: ps_profiles
     }
     res.render("index", response);
 })

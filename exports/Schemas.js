@@ -57,6 +57,32 @@ const contact = {
     "gh": String,
 }
 
+const education = {
+    "diplome": String,
+    "description": String,
+    "etab": String
+}
+
+const cp_comp = {
+    "host": String,
+    "rank": String
+}
+
+const ds_comp = {
+    "host": String,
+    "rank": String
+}
+
+const ctf_comp = {
+    "host": String,
+    "rank": String
+}
+
+const ps_profiles = {
+    "host": String,
+    "link": String
+}
+
 
 
 
@@ -70,5 +96,10 @@ module.exports = {
     work,
     services,
     books,
-    contact
+    contact,
+    education,
+    cp_comp,
+    ds_comp,
+    ctf_comp,
+    ps_profiles
 }

@@ -86,27 +86,45 @@
                                 <br><br>
                                 <p class="ps"><i class="fa-solid fa-lightbulb"></i> Competitive Programming Competitions</p>
                                 <br>
-                                <p><i class="fa-solid fa-medal"></i> Ranked 40th in Tunisia and 700+ worldwide in ieeextreme, a competitive programming contest held by IEEE.</p>
-                                <br>
+                                <% for (let i=0; i<cp_comp.length; i++){%>
+                                    <p><i class="fa-solid fa-trophy"></i> Host: <%= cp_comp[i].host %> </p>
+                                    <br>
+                                    <p><i class="fa-solid fa-medal"></i> rank: <%= cp_comp[i].rank %> </p>
+                                    <br>
+                                <%}%>
                                 <p class="ps"><i class="fa-solid fa-brain"></i> Data Science Competitions</p>
                                 <br>
-                                <a class="ds" href="https://zindi.africa/users/ZeroDayOutplay">Zindi Profile</a>
-                                <a class="ds" href="https://www.kaggle.com/zeroday0utplay">Kaggle Profile</a>
-                                <br><br>
+                                <% for (let i=0; i<ds_comp.length; i++){%>
+                                    <p><i class="fa-solid fa-trophy"></i> Host: <%= ds_comp[i].host %> </p>
+                                    <br>
+                                    <p><i class="fa-solid fa-medal"></i> Rank: <%= ds_comp[i].rank %> </p>
+                                    <br>
+                                <%}%>
                                 <p class="ps"><i class="fa-solid fa-hat-cowboy"></i> CTF Competitions</p>
                                 <br>
-                                <a class="ds" href="https://play.picoctf.org/users/ZedSter7">PicoCTF Profile</a>
-                                <!-- <a class="ds" href="https://www.hackthebox.com/home/users/profile/509465">Hack The Box Profile</a> -->
-
+                                <% for (let i=0; i<ctf_comp.length; i++){%>
+                                    <p><i class="fa-solid fa-trophy"></i> Host: <%= ctf_comp[i].host %> </p>
+                                    <br>
+                                    <p><i class="fa-solid fa-medal"></i> Rank: <%= ctf_comp[i].rank %> </p>
+                                    <br>
+                                <%}%>
+                                <p class="ps"><i class="fa-solid fa-brain"></i> Problem Solving Profiles</p>
+                                <br>
+                                <% for (let i=0; i<ps_profiles.length; i++){%>
+                                    <a class="ds" href=<%= ps_profiles[i].link %> > <%= ps_profiles[i].host %> Profile</a>
+                                <%}%> 
                             </li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="education">
                         <ul>
-                            <li>
-                                <span>Pre-Engineering degree</span>
-                                <p class="description">Math/Physics</p>
-                            </li>
+                            <h2 class="acad_span">Formal Education</h2>
+                            <%for (let i=0; i<education.length; i++){%>
+                                <li>
+                                    <h3 class="academia"><%= education[i].diplome %> Diploma</h3>
+                                    <p class="description"><%= education[i].description %> @ <%= education[i].etab %></p>
+                                </li>
+                            <%}%>
                             <li>
                             <span>Online Certifications</span>
                                 <% for (let i=0; i<certs.length; i++){%>
