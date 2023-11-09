@@ -197,7 +197,8 @@ nav ul li a:hover::after{
     display: block;
 }
 
-#loadMoreCerts, #loadMoreTechBooks, #loadMoreNonTechBooks{
+#loadMoreCerts, #loadMoreTechBooks, #loadMoreNonTechBooks, #loadMoreCP, #loadMoreDS, #loadMoreCTF, #loadMoreClubs{
+    margin-top: 0;
     margin-left: 0;
 }
 

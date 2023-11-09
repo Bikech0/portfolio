@@ -79,6 +79,7 @@ app.get("/", async (req, res)=>{
         ctf_comp: ctf_comp,
         ps_profiles: ps_profiles
     }
+    console.log(volunWork);
     res.render("index", response);
 })
 

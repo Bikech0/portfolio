@@ -25,6 +25,14 @@ $( document ).ready(function () {
     load_more("tk", "loadMoreTechBooks");
 
     load_more("ntk", "loadMoreNonTechBooks");
+    
+    load_more("cp_comp", "loadMoreCP");
+    
+    load_more("ds_comp", "loadMoreDS");
+
+    load_more("ctf_comp", "loadMoreCTF");
+
+    load_more("clubs", "loadMoreClubs");
 
   });
   

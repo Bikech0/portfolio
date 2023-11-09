@@ -68,14 +68,21 @@
                     </div>
                     <div class="tab-contents" id="experience">
                         <ul>
-                            <% for (let i=0; i<volunWork.length; i++){%>
+                            <li><span><%= volunWork[0].span %></span></li>
+                            <% for (let i=0; i<volunWork[0].desc.length; i++){%>
                                 <li>
-                                    <span><%= volunWork[i].span %></span>
-                                    <% for (let j=0; j<volunWork[i].desc.length; j++){%>
-                                        <p class="description"><%= volunWork[i].desc[j] %></p>
+                                    <% if (i<3) {%>
+                                        <div>
+                                            <p class="description"><%= volunWork[0].desc[i] %></p>
+                                        </div>
+                                    <%}else{%>
+                                        <div class="clubs" style="display: none;">
+                                            <p class="description"><%= volunWork[0].desc[i] %></p>
+                                        </div>
                                     <%}%>
                                 </li>
                             <%}%>
+                            <a href="#about" class="btn" id="loadMoreClubs">See more</a>
                             <li>
                                 <span>Personal Projects</span>
                                 <br><br>
@@ -87,27 +94,66 @@
                                 <p class="ps"><i class="fa-solid fa-lightbulb"></i> Competitive Programming Competitions</p>
                                 <br>
                                 <% for (let i=0; i<cp_comp.length; i++){%>
-                                    <p><i class="fa-solid fa-trophy"></i> Host: <%= cp_comp[i].host %> </p>
-                                    <br>
-                                    <p><i class="fa-solid fa-medal"></i> rank: <%= cp_comp[i].rank %> </p>
-                                    <br>
+                                    <% if (i<3) {%>
+                                        <div>
+                                            <p><i class="fa-solid fa-trophy"></i> Host: <%= cp_comp[i].host %> </p>
+                                            <br>
+                                            <p><i class="fa-solid fa-medal"></i> rank: <%= cp_comp[i].rank %> </p>
+                                            <br>
+                                        </div>
+                                    <%}else{%>
+                                        <div class="cp_comp" style="display: none;">
+                                            <p><i class="fa-solid fa-trophy"></i> Host: <%= cp_comp[i].host %> </p>
+                                            <br>
+                                            <p><i class="fa-solid fa-medal"></i> rank: <%= cp_comp[i].rank %> </p>
+                                            <br>
+                                        </div>
+                                    <%}%>
                                 <%}%>
+                                <a href="#about" class="btn" id="loadMoreCP">See more</a>
+                                
                                 <p class="ps"><i class="fa-solid fa-brain"></i> Data Science Competitions</p>
                                 <br>
                                 <% for (let i=0; i<ds_comp.length; i++){%>
-                                    <p><i class="fa-solid fa-trophy"></i> Host: <%= ds_comp[i].host %> </p>
-                                    <br>
-                                    <p><i class="fa-solid fa-medal"></i> Rank: <%= ds_comp[i].rank %> </p>
-                                    <br>
+                                    <% if (i<3) {%>
+                                        <div>
+                                            <p><i class="fa-solid fa-trophy"></i> Host: <%= ds_comp[i].host %> </p>
+                                            <br>
+                                            <p><i class="fa-solid fa-medal"></i> rank: <%= ds_comp[i].rank %> </p>
+                                            <br>
+                                        </div>
+                                    <%}else{%>
+                                        <div class="ds_comp" style="display: none;">
+                                            <p><i class="fa-solid fa-trophy"></i> Host: <%= ds_comp[i].host %> </p>
+                                            <br>
+                                            <p><i class="fa-solid fa-medal"></i> rank: <%= ds_comp[i].rank %> </p>
+                                            <br>
+                                        </div>
+                                    <%}%>
                                 <%}%>
+                                <a href="#about" class="btn" id="loadMoreDS">See more</a>
+
                                 <p class="ps"><i class="fa-solid fa-hat-cowboy"></i> CTF Competitions</p>
                                 <br>
                                 <% for (let i=0; i<ctf_comp.length; i++){%>
-                                    <p><i class="fa-solid fa-trophy"></i> Host: <%= ctf_comp[i].host %> </p>
-                                    <br>
-                                    <p><i class="fa-solid fa-medal"></i> Rank: <%= ctf_comp[i].rank %> </p>
-                                    <br>
+                                    <% if (i<3) {%>
+                                        <div>
+                                            <p><i class="fa-solid fa-trophy"></i> Host: <%= ctf_comp[i].host %> </p>
+                                            <br>
+                                            <p><i class="fa-solid fa-medal"></i> rank: <%= ctf_comp[i].rank %> </p>
+                                            <br>
+                                        </div>
+                                    <%}else{%>
+                                        <div class="ctf_comp" style="display: none;">
+                                            <p><i class="fa-solid fa-trophy"></i> Host: <%= ctf_comp[i].host %> </p>
+                                            <br>
+                                            <p><i class="fa-solid fa-medal"></i> rank: <%= ctf_comp[i].rank %> </p>
+                                            <br>
+                                        </div>
+                                    <%}%>
                                 <%}%>
+                                <a href="#about" class="btn" id="loadMoreCTF">See more</a>
+
                                 <p class="ps"><i class="fa-solid fa-user"></i> Problem Solving Profiles</p>
                                 <br>
                                 <% for (let i=0; i<ps_profiles.length; i++){%>
