@@ -96,14 +96,18 @@
                                 <% for (let i=0; i<cp_comp.length; i++){%>
                                     <% if (i<3) {%>
                                         <div>
-                                            <p><i class="fa-solid fa-trophy"></i> Host: <%= cp_comp[i].host %> </p>
+                                            <p><i class="fa-solid fa-trophy"></i> name: <%= cp_comp[i].name %> </p>
+                                            <br>
+                                            <p><i class="fa-solid fa-user"></i> host: <%= cp_comp[i].rank %> </p>
                                             <br>
                                             <p><i class="fa-solid fa-medal"></i> rank: <%= cp_comp[i].rank %> </p>
                                             <br>
                                         </div>
                                     <%}else{%>
                                         <div class="cp_comp" style="display: none;">
-                                            <p><i class="fa-solid fa-trophy"></i> Host: <%= cp_comp[i].host %> </p>
+                                            <p><i class="fa-solid fa-trophy"></i> name: <%= cp_comp[i].name %> </p>
+                                            <br>
+                                            <p><i class="fa-solid fa-user"></i> host: <%= cp_comp[i].rank %> </p>
                                             <br>
                                             <p><i class="fa-solid fa-medal"></i> rank: <%= cp_comp[i].rank %> </p>
                                             <br>
@@ -117,7 +121,9 @@
                                 <% for (let i=0; i<ds_comp.length; i++){%>
                                     <% if (i<3) {%>
                                         <div>
-                                            <p><i class="fa-solid fa-trophy"></i> Host: <%= ds_comp[i].host %> </p>
+                                            <p><i class="fa-solid fa-trophy"></i> name: <%= ds_comp[i].name %> </p>
+                                            <br>
+                                            <p><i class="fa-solid fa-user"></i> host: <%= ds_comp[i].host %> </p>
                                             <br>
                                             <p><i class="fa-solid fa-medal"></i> rank: <%= ds_comp[i].rank %> </p>
                                             <br>

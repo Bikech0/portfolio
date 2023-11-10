@@ -64,16 +64,19 @@ const education = {
 }
 
 const cp_comp = {
+    "name": String,
     "host": String,
     "rank": String
 }
 
 const ds_comp = {
+    "name": String,
     "host": String,
     "rank": String
 }
 
 const ctf_comp = {
+    "name": String,
     "host": String,
     "rank": String
 }
