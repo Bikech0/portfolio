@@ -225,6 +225,10 @@ nav ul li a:hover::after{
     transition: background 0.5s, transform 0.5s;
 }
 
+.sub_comp{
+    font-size: 12px;
+}
+
 .services-list i{
     font-size: 50px;
     margin-bottom: 30px;
