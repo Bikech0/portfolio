@@ -98,18 +98,18 @@
                                         <div>
                                             <p><i class="fa-solid fa-trophy"></i> name: <%= cp_comp[i].name %> </p>
                                             <br>
-                                            <p><i class="fa-solid fa-user sub_comp"></i> host: <%= cp_comp[i].host %> </p>
+                                            <p class="sub_comp"><i class="fa-solid fa-user"></i> host: <%= cp_comp[i].host %> </p>
                                             <br>
-                                            <p><i class="fa-solid fa-medal sub_comp"></i> rank: <%= cp_comp[i].rank %> </p>
+                                            <p class="sub_comp"><i class="fa-solid fa-medal"></i> rank: <%= cp_comp[i].rank %> </p>
                                             <br>
                                         </div>
                                     <%}else{%>
                                         <div class="cp_comp" style="display: none;">
                                             <p><i class="fa-solid fa-trophy"></i> name: <%= cp_comp[i].name %> </p>
                                             <br>
-                                            <p><i class="fa-solid fa-user sub_comp"></i> host: <%= cp_comp[i].host %> </p>
+                                            <p class="sub_comp"><i class="fa-solid fa-user"></i> host: <%= cp_comp[i].host %> </p>
                                             <br>
-                                            <p><i class="fa-solid fa-medal sub_comp"></i> rank: <%= cp_comp[i].rank %> </p>
+                                            <p class="sub_comp"><i class="fa-solid fa-medal"></i> rank: <%= cp_comp[i].rank %> </p>
                                             <br>
                                         </div>
                                     <%}%>
@@ -124,18 +124,18 @@
                                         <div>
                                             <p><i class="fa-solid fa-trophy"></i> name: <%= ds_comp[i].name %> </p>
                                             <br>
-                                            <p><i class="fa-solid fa-user sub_comp"></i> host: <%= ds_comp[i].host %> </p>
+                                            <p class="sub_comp"><i class="fa-solid fa-user"></i> host: <%= ds_comp[i].host %> </p>
                                             <br>
-                                            <p><i class="fa-solid fa-medal sub_comp"></i> rank: <%= ds_comp[i].rank %> </p>
+                                            <p class="sub_comp"><i class="fa-solid fa-medal"></i> rank: <%= ds_comp[i].rank %> </p>
                                             <br>
                                         </div>
                                     <%}else{%>
                                         <div class="ds_comp" style="display: none;">
                                             <p><i class="fa-solid fa-trophy"></i> name: <%= ds_comp[i].name %> </p>
                                             <br>
-                                            <p><i class="fa-solid fa-user sub_comp"></i> host: <%= ds_comp[i].host %> </p>
+                                            <p class="sub_comp"><i class="fa-solid fa-user"></i> host: <%= ds_comp[i].host %> </p>
                                             <br>
-                                            <p><i class="fa-solid fa-medal sub_comp"></i> rank: <%= ds_comp[i].rank %> </p>
+                                            <p class="sub_comp"><i class="fa-solid fa-medal"></i> rank: <%= ds_comp[i].rank %> </p>
                                             <br>
                                         </div>
                                     <%}%>
@@ -147,19 +147,24 @@
                                 <% for (let i=0; i<ctf_comp.length; i++){%>
                                     <% if (i<3) {%>
                                         <div>
-                                            <p><i class="fa-solid fa-trophy"></i> Host: <%= ctf_comp[i].host %> </p>
+                                            <p><i class="fa-solid fa-trophy"></i> name: <%= ctf_comp[i].name %> </p>
                                             <br>
-                                            <p><i class="fa-solid fa-medal"></i> rank: <%= ctf_comp[i].rank %> </p>
+                                            <p class="sub_comp"><i class="fa-solid fa-medal"></i> host: <%= ctf_comp[i].host %> </p>
+                                            <br>
+                                            <p class="sub_comp"><i class="fa-solid fa-medal"></i> rank: <%= ctf_comp[i].rank %> </p>
                                             <br>
                                         </div>
                                     <%}else{%>
                                         <div class="ctf_comp" style="display: none;">
-                                            <p><i class="fa-solid fa-trophy"></i> Host: <%= ctf_comp[i].host %> </p>
+                                            <p><i class="fa-solid fa-trophy"></i> name: <%= ctf_comp[i].name %> </p>
                                             <br>
-                                            <p><i class="fa-solid fa-medal"></i> rank: <%= ctf_comp[i].rank %> </p>
+                                            <p class="sub_comp"><i class="fa-solid fa-medal"></i> host: <%= ctf_comp[i].host %> </p>
+                                            <br>
+                                            <p class="sub_comp"><i class="fa-solid fa-medal"></i> rank: <%= ctf_comp[i].rank %> </p>
                                             <br>
                                         </div>
                                     <%}%>
+                                    <br>
                                 <%}%>
                                 <a href="#about" class="btn" id="loadMoreCTF">See more</a>
 
