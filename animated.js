@@ -3,7 +3,7 @@ const text = document.querySelector(".sec-text");
 
 const textLoad = () => {
     setTimeout(() => {
-        text.textContent = "Computer Scientist";
+        text.textContent = "Competitive Programmer";
     }, 0);
     setTimeout(() => {
         text.textContent = "Software Developer";
