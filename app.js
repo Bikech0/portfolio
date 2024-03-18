@@ -69,7 +69,7 @@ app.get("/", async (req, res)=>{
         skills: skills,
         volunWork: volunWork,
         certs: certs,
-        work: work,
+        work: work.reverse(),
         services: services,
         tkbooks: tkbooks,
         ntkbooks: ntkbooks,
