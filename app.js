@@ -50,7 +50,7 @@ app.get("/", async (req, res)=>{
     const volunWork = await VolunWork.find({});
     let certs = await Certs.find({});
     certs.sort((cert1, cert2) => cert1.rank - cert2.rank); // sorting is used to organize the order of the certs's view
-    const work = await Work.find({})  ;
+    const work = (await Work.find({})).reverse(); // to show recent projects first
     const services = await Services.find({});
     const contact = await Contact.find({});
     const books = await Books.find({});
@@ -69,7 +69,7 @@ app.get("/", async (req, res)=>{
         skills: skills,
         volunWork: volunWork,
         certs: certs,
-        work: work.reverse(),
+        work: work,
         services: services,
         tkbooks: tkbooks,
         ntkbooks: ntkbooks,
