@@ -94,7 +94,7 @@
                                 <p class="ps"><i class="fa-solid fa-lightbulb"></i> Competitive Programming Competitions</p>
                                 <br>
                                 <% for (let i=0; i<cp_comp.length; i++){%>
-                                    <% if (i<3) {%>
+                                    <% if (i<1) {%>
                                         <div>
                                             <p><i class="fa-solid fa-trophy"></i> name: <%= cp_comp[i].name %> </p>
                                             <br>
@@ -113,7 +113,6 @@
                                             <br>
                                         </div>
                                     <%}%>
-                                    <br>
                                 <%}%>
                                 <a href="#about" class="btn" id="loadMoreCP">See more</a>
                                 
@@ -164,7 +163,6 @@
                                             <br>
                                         </div>
                                     <%}%>
-                                    <br>
                                 <%}%>
                                 <a href="#about" class="btn" id="loadMoreCTF">See more</a>
 
@@ -282,7 +280,7 @@
                             <img src=<%= work[i].img_src %> alt="">
                             <div class="layer">
                                 <h3><%= work[i].title %></h3>
-                                <p><%= work[i].desc %></p>
+                                <p class="work-desc"><%= work[i].desc %></p>
                                 <a href=<%= work[i].link %>><i class="fa-solid fa-up-right-from-square"></i></i></a>
                             </div>
                         </div>
